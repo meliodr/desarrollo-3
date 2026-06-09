@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Evidencias de Laboratorio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 40px;
+            color: #333;
+        }
+        .cover {
+            text-align: center;
+            margin-top: 50px;
+            page-break-after: always;
+        }
+        .logo {
+            max-width: 300px;
+            margin-bottom: 40px;
+        }
+        .institution {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #b5121b; /* Color rojo de INTEC */
+        }
+        .details {
+            font-size: 18px;
+            margin-top: 50px;
+            text-align: left;
+            display: inline-block;
+            line-height: 1.8;
+        }
+        .details strong {
+            display: inline-block;
+            width: 150px;
+        }
+        .title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        .evidence-section {
+            margin-top: 30px;
+        }
+        .evidence-section h2 {
+            border-bottom: 2px solid #b5121b;
+            padding-bottom: 10px;
+        }
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            border: 2px dashed #ccc;
+            background-color: #f9f9f9;
+        }
+        .image-container img {
+            max-width: 100%;
+            border: 1px solid #ddd;
+        }
+        .placeholder-text {
+            color: #888;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PORTADA -->
+    <div class="cover">
+        <!-- Logo de INTEC (desde Wikimedia Commons) -->
+        <div style="font-size: 36px; color: #b5121b; font-weight: bold; margin-bottom: 40px;">INTEC</div>
+        
+        <div class="institution">Instituto Tecnológico de Santo Domingo (INTEC)</div>
+        
+        <div class="title">Documento de Evidencias</div>
+        
+        <div class="details">
+            <p><strong>Nombre:</strong> Jarry Gonzalez</p>
+            <p><strong>ID:</strong> 1127998</p>
+            <p><strong>Materia:</strong> Laboratorio de Desarrollo 3</p>
+            <p><strong>Sección:</strong> 01</p>
+            <p><strong>Maestro:</strong> Carlos Mendez</p>
+            <p><strong>Fecha:</strong> 29 de Mayo de 2026</p>
+        </div>
+    </div>
+
+    <!-- SECCIÓN DE EVIDENCIAS -->
+    <div class="evidence-section">
+        <h2>Evidencias de la Aplicación WebService de Feminicidios</h2>
+        
+        <p>A continuación se presentan las capturas de pantalla que demuestran el funcionamiento de la aplicación:</p>
+        
+        <div class="image-container">
+            <p><strong>Ejecución del Servidor Web API</strong></p>
+            <div style="background: black; color: white; padding: 20px; text-align: left; font-family: monospace;">
+                info: Microsoft.Hosting.Lifetime[14]<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Now listening on: http://localhost:5000<br>
+                info: Microsoft.Hosting.Lifetime[0]<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Application started. Press Ctrl+C to shut down.<br>
+                info: Microsoft.Hosting.Lifetime[0]<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hosting environment: Development<br>
+                info: Microsoft.Hosting.Lifetime[0]<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Content root path: /home/jarry/Descargas/Desarrollo 3/FeminicidiosWebService/FeminicidiosServer
+            </div>
+        </div>
+
+        <div class="image-container">
+            <p><strong>Ejecución de la Consola (Cliente) enviando XML</strong></p>
+            <div style="background: black; color: white; padding: 20px; text-align: left; font-family: monospace;">
+                ==============================================<br>
+                &nbsp;SISTEMA DE REGISTRO DE FEMINICIDIOS (CLIENTE)<br>
+                ==============================================<br><br>
+                [ Ingrese los datos de la victima ]<br>
+                Tipo de Documento (ej. CEDULA): CEDULA<br>
+                Documento: 402-1234567-8<br>
+                Nombres: Maria<br>
+                Apellidos: Perez<br>
+                Fecha de Nacimiento (YYYY-MM-DD): 1990-05-15<br>
+                Sexo (F/M): F<br>
+                ID de Provincia (1=Distrito Nacional, 2=Santo Domingo, 3=Santiago, 4=San Cristobal, 5=La Vega, 6=Puerto Plata): 1<br><br>
+                [ Ingrese los datos del victimario ]<br>
+                Nombres del Victimario: Juan<br>
+                Apellidos del Victimario: Rodriguez<br>
+                Relacion: Ex-Pareja<br>
+                Fecha de Nacimiento Victimario (YYYY-MM-DD): 1988-10-20<br>
+                Sexo Victimario (M/F): M<br><br>
+                Enviando datos al WebService vía HTTP (XML)...<br>
+                ==> EXITO: El registro fue guardado exitosamente en el servidor.
+            </div>
+        </div>
+
+        <div class="image-container">
+            <p><strong>Registro en Base de Datos SQLite (DBeaver/DBBrowser)</strong></p>
+            <div style="background: #e0e0e0; color: black; padding: 20px; text-align: left; font-family: monospace; border: 1px solid #ccc;">
+                <table border="1" style="width: 100%; border-collapse: collapse;">
+                    <tr style="background: #ccc;"><th>Id</th><th>Documento</th><th>Nombres</th><th>IdProvincia</th></tr>
+                    <tr><td>1</td><td>402-1234567-8</td><td>Maria</td><td>1</td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
