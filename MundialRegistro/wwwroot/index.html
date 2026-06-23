@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registro Mundial de Football</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero__content">
+            <span class="badge">Mundial de Football 2026</span>
+            <h1>Registro para asistir a un juego</h1>
+            <p>Seleccione una fecha, el partido, su asiento y complete sus datos para generar el comprobante imprimible en PDF.</p>
+        </div>
+    </header>
+
+    <main class="layout">
+        <section class="card form-card" aria-labelledby="tituloRegistro">
+            <h2 id="tituloRegistro">Datos del registro</h2>
+            <div id="alerta" class="alert" role="alert" hidden></div>
+
+            <form id="registroForm" autocomplete="on">
+                <div class="grid two">
+                    <label>
+                        Fecha del juego
+                        <select id="fechaJuego" required>
+                            <option value="">Seleccione una fecha</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        Partido
+                        <select id="partidoId" name="partidoId" required disabled>
+                            <option value="">Seleccione un partido</option>
+                        </select>
+                    </label>
+                </div>
+
+                <div class="seat-section">
+                    <div>
+                        <h3>Seleccione su asiento</h3>
+                        <p class="hint">Los asientos en gris ya están ocupados.</p>
+                    </div>
+                    <input type="hidden" id="asiento" name="asiento" required>
+                    <div id="seatMap" class="seat-map" aria-label="Mapa de asientos"></div>
+                </div>
+
+                <div class="grid two">
+                    <label>
+                        TipoDocumento
+                        <select id="tipoDocumento" name="tipoDocumento" required>
+                            <option value="">Seleccione</option>
+                            <option value="Cédula">Cédula</option>
+                            <option value="Pasaporte">Pasaporte</option>
+                            <option value="Licencia">Licencia</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        Documento
+                        <input id="documento" name="documento" type="text" maxlength="30" placeholder="Ej.: 00100000000" required>
+                    </label>
+
+                    <label>
+                        Nombres
+                        <input id="nombres" name="nombres" type="text" maxlength="80" placeholder="Escriba sus nombres" required>
+                    </label>
+
+                    <label>
+                        Apellidos
+                        <input id="apellidos" name="apellidos" type="text" maxlength="80" placeholder="Escriba sus apellidos" required>
+                    </label>
+
+                    <label>
+                        FechaNacimiento
+                        <input id="fechaNacimiento" name="fechaNacimiento" type="date" required>
+                    </label>
+
+                    <label>
+                        Sexo
+                        <select id="sexo" name="sexo" required>
+                            <option value="">Seleccione</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </label>
+                </div>
+
+                <button class="primary" type="submit">Registrar y generar comprobante</button>
+            </form>
+        </section>
+
+        <aside class="card info-card">
+            <h2>Resumen del proceso</h2>
+            <ol>
+                <li>Seleccione la fecha del juego.</li>
+                <li>Elija uno de los partidos disponibles.</li>
+                <li>Marque un asiento libre.</li>
+                <li>Complete sus datos personales.</li>
+                <li>Imprima el comprobante o guárdelo como PDF.</li>
+            </ol>
+        </aside>
+
+        <section id="comprobante" class="receipt card" hidden aria-labelledby="tituloComprobante">
+            <div class="receipt__header">
+                <div>
+                    <span class="badge">Comprobante</span>
+                    <h2 id="tituloComprobante">Registro confirmado</h2>
+                </div>
+                <strong id="codigoComprobante" class="code"></strong>
+            </div>
+
+            <div class="ticket">
+                <div>
+                    <p class="label">Nombre</p>
+                    <h3 id="ticketNombre"></h3>
+                </div>
+                <div>
+                    <p class="label">Documento</p>
+                    <p id="ticketDocumento"></p>
+                </div>
+                <div>
+                    <p class="label">Partido</p>
+                    <p id="ticketPartido"></p>
+                </div>
+                <div>
+                    <p class="label">Fecha y hora</p>
+                    <p id="ticketFecha"></p>
+                </div>
+                <div>
+                    <p class="label">Estadio</p>
+                    <p id="ticketEstadio"></p>
+                </div>
+                <div>
+                    <p class="label">Asiento</p>
+                    <p id="ticketAsiento" class="seat-code"></p>
+                </div>
+                <div>
+                    <p class="label">Fecha de registro</p>
+                    <p id="ticketRegistro"></p>
+                </div>
+            </div>
+
+            <div class="receipt-actions">
+                <button class="secondary" type="button" id="imprimirBtn">Imprimir / Guardar PDF</button>
+                <button class="ghost" type="button" id="nuevoBtn">Nuevo registro</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
